@@ -1,0 +1,10 @@
+{
+  "expectedNavLinks":    ["Login", "Sign Up"],
+  "expectedFooterLinks": 1,
+  "pages": {
+    "home":     "/",
+    "login":    "/login",
+    "signup":   "/signup",
+    "timeline": "/timeline"
+  }
+}
