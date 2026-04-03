@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1><a href="webpages.html">PraRoz</a></h1>
+        <nav class="navbar-nav">
+            <a href="webpages.html" class="back-link">Home</a>
+            <a href="service.html" class="back-link">Services</a>
+        </nav>
+    </div>
+
+    <main class="container">
+        <h1 class="page-title">Contact Us</h1>
+        <p class="lead">Have a question or want to work together? Send us a message and we'll get back to you shortly.</p>
+
+        <form class="contact-form" action="#" method="post" onsubmit="alert('Form submitted (demo)'); return false;">
+            <div>
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" placeholder="Your full name" required>
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required>
+            </div>
+
+            <div>
+                <label for="subject">Subject</label>
+                <input id="subject" name="subject" type="text" placeholder="Subject (e.g., project inquiry)">
+            </div>
+
+            <div>
+                <label for="phone">Phone (optional)</label>
+                <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210">
+            </div>
+
+            <div>
+                <label for="company">Company (optional)</label>
+                <input id="company" name="company" type="text" placeholder="Company name">
+            </div>
+
+            <div>
+                <label for="budget">Estimated budget (optional)</label>
+                <input id="budget" name="budget" type="text" placeholder="e.g., $2000 - $5000">
+            </div>
+
+            <textarea id="message" name="message" placeholder="Tell us a little about your project or question..." required></textarea>
+
+            <div class="actions">
+                <button type="submit" class="btn-primary">Send Message</button>
+                <a href="webpages.html" class="back-link">← Back to Home</a>
+            </div>
+        </form>
+
+    </main>
+
+</body>
+</html>

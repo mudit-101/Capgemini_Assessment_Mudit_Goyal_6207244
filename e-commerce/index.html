@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopZone</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="brand" id="homeBtn">🛒 ShopZone</div>
+    <ul class="nav-menu">
+      <li><button class="nav-btn" data-page="electronics">Electronics</button></li>
+      <li><button class="nav-btn" data-page="fashion">Fashion</button></li>
+      <li><button class="nav-btn" data-page="home">Home & Living</button></li>
+    </ul>
+    <div class="cart-icon">
+      🛒 <span class="cart-badge" id="cartBadge">0</span>
+    </div>
+  </nav>
+
+  <!-- HOME PAGE -->
+  <div id="page-home" class="page active">
+    <div class="hero">
+      <h1>Welcome to ShopZone</h1>
+      <p>Your one-stop shop for Electronics, Fashion & Home products</p>
+      <div class="hero-buttons">
+        <button class="btn" data-page="electronics">📱 Electronics</button>
+        <button class="btn" data-page="fashion">👗 Fashion</button>
+        <button class="btn" data-page="home">🏠 Home & Living</button>
+      </div>
+    </div>
+
+    <div class="home-categories">
+      <h2>Shop by Category</h2>
+      <div class="category-cards">
+        <div class="cat-card" data-page="electronics">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=200&fit=crop" alt="Electronics"/>
+          <h3>Electronics</h3>
+          <p>Phones, Laptops & more</p>
+        </div>
+        <div class="cat-card" data-page="fashion">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=200&fit=crop" alt="Fashion"/>
+          <h3>Fashion</h3>
+          <p>Clothes, Shoes & more</p>
+        </div>
+        <div class="cat-card" data-page="home">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=200&fit=crop" alt="Home"/>
+          <h3>Home & Living</h3>
+          <p>Furniture & Decor</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">© 2025 ShopZone. All rights reserved.</footer>
+  </div>
+
+  <!-- ELECTRONICS PAGE -->
+  <div id="page-electronics" class="page">
+    <div class="page-top electronics-top">
+      <h1>📱 Electronics</h1>
+      <p>Best deals on gadgets and tech</p>
+    </div>
+    <div class="product-grid" id="electronicsGrid"></div>
+    <footer class="footer">© 2025 ShopZone. All rights reserved.</footer>
+  </div>
+
+  <!-- FASHION PAGE -->
+  <div id="page-fashion" class="page">
+    <div class="page-top fashion-top">
+      <h1>👗 Fashion</h1>
+      <p>Trending styles for everyone</p>
+    </div>
+    <div class="product-grid" id="fashionGrid"></div>
+    <footer class="footer">© 2025 ShopZone. All rights reserved.</footer>
+  </div>
+
+  <!-- HOME & LIVING PAGE -->
+  <div id="page-home-living" class="page">
+    <div class="page-top home-top">
+      <h1>🏠 Home & Living</h1>
+      <p>Beautiful things for your home</p>
+    </div>
+    <div class="product-grid" id="homeGrid"></div>
+    <footer class="footer">© 2025 ShopZone. All rights reserved.</footer>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">✅ Added to cart!</div>
+
+  <!-- Load TypeScript via CDN compiler -->
+  <script src="https://cdn.jsdelivr.net/npm/typescript@5.3.3/lib/typescript.js"></script>
+  <script>
+    fetch('app.ts')
+      .then(res => res.text())
+      .then(code => {
+        const result = ts.transpileModule(code, {
+          compilerOptions: { target: ts.ScriptTarget.ES2017, module: ts.ModuleKind.None }
+        });
+        const script = document.createElement('script');
+        script.textContent = result.outputText;
+        document.body.appendChild(script);
+      });
+  </script>
+
+</body>
+</html>
